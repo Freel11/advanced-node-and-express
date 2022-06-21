@@ -16,11 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'pug')
 
 app.use(session({
-  secret: process.env.SECRET_KEY,
+  secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: true,
   cookie: { secure: false }
-}))
+}));
 
 app.use(passport.initialize())
 app.use(passport.session())
